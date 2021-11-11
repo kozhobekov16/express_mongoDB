@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 const exphbr = require('express-handlebars')
 let todoRoutes = require('./routes/todos')
 
@@ -15,6 +15,7 @@ app.set('view engine', 'hbs')
 app.set('views', 'views')
 
 app.use(todoRoutes)
+
 async function start(){
     try{
         await mongoose.connect('mongodb+srv://Zhakshylyk:qwerty123@cluster0.bxldi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
@@ -25,7 +26,7 @@ async function start(){
             console.log('start')
         })
     }catch (e){
-        console.log(e)
+        console.log("ERROR", e)
     }
 }
 
