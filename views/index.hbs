@@ -1,1 +1,23 @@
-<h1>dsadas</h1>
+<h1>Main Page </h1>
+
+{{#if todos.length}}
+
+<ul>
+    {{#each todos}}
+    <li class="todo">
+        <label>
+            {{#if completed}}
+            <input type="checkbox" checked/>
+            <span class="complated">{{title}}</span>
+            {{else}}
+            <input type="checkbox" />
+            <span>{{title}}</span>
+            {{/if}}
+            <button class="btn btn-small">Save</button>
+        </label>
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<p>No todos</p>
+{{/if}}
